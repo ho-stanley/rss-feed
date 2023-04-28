@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView} from 'react-native';
-import {Appbar, List} from 'react-native-paper';
+import {Appbar, List, Tooltip} from 'react-native-paper';
 
 type RssFeed = {
   title: string;
@@ -59,11 +59,13 @@ function Home(): JSX.Element {
     <>
       <Appbar.Header>
         <Appbar.Content title="Feed" />
-        <Appbar.Action
-          icon="plus"
-          accessibilityLabel="Add feed"
-          onPress={() => {}}
-        />
+        <Tooltip title="Add feed">
+          <Appbar.Action
+            icon="plus"
+            accessibilityLabel="Add feed"
+            onPress={() => console.log('add feed')}
+          />
+        </Tooltip>
       </Appbar.Header>
       <ScrollView>
         <List.Accordion title={mockFzFeed.title} left={Icon}>
