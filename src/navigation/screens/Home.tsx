@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView} from 'react-native';
-import {List} from 'react-native-paper';
+import {Appbar, List} from 'react-native-paper';
 
 type RssFeed = {
   title: string;
@@ -56,28 +56,38 @@ const Icon = (props: {color: string}) => <List.Icon {...props} icon="rss" />;
 
 function Home(): JSX.Element {
   return (
-    <ScrollView>
-      <List.Accordion title={mockFzFeed.title} left={Icon}>
-        {mockFzFeed.items.map(item => (
-          <List.Item
-            key={item.link}
-            title={item.title}
-            description={item.description}
-            onPress={() => console.log(item.link)}
-          />
-        ))}
-      </List.Accordion>
-      <List.Accordion title={mockDnFeed.title} left={Icon}>
-        {mockDnFeed.items.map(item => (
-          <List.Item
-            key={item.link}
-            title={item.title}
-            description={item.description}
-            onPress={() => console.log(item.link)}
-          />
-        ))}
-      </List.Accordion>
-    </ScrollView>
+    <>
+      <Appbar.Header>
+        <Appbar.Content title="Feed" />
+        <Appbar.Action
+          icon="plus"
+          accessibilityLabel="Add feed"
+          onPress={() => {}}
+        />
+      </Appbar.Header>
+      <ScrollView>
+        <List.Accordion title={mockFzFeed.title} left={Icon}>
+          {mockFzFeed.items.map(item => (
+            <List.Item
+              key={item.link}
+              title={item.title}
+              description={item.description}
+              onPress={() => console.log(item.link)}
+            />
+          ))}
+        </List.Accordion>
+        <List.Accordion title={mockDnFeed.title} left={Icon}>
+          {mockDnFeed.items.map(item => (
+            <List.Item
+              key={item.link}
+              title={item.title}
+              description={item.description}
+              onPress={() => console.log(item.link)}
+            />
+          ))}
+        </List.Accordion>
+      </ScrollView>
+    </>
   );
 }
 
