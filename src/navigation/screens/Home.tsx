@@ -72,6 +72,7 @@ function Home(): JSX.Element {
           {mockFzFeed.items.map(item => (
             <List.Item
               key={item.link}
+              left={Icon}
               title={item.title}
               description={item.description}
               onPress={() => console.log(item.link)}
@@ -82,6 +83,7 @@ function Home(): JSX.Element {
           {mockDnFeed.items.map(item => (
             <List.Item
               key={item.link}
+              left={Icon}
               title={item.title}
               description={item.description}
               onPress={() => console.log(item.link)}
