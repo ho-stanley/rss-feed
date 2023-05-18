@@ -1,6 +1,10 @@
 import React from 'react';
+import {StackScreenProps} from '@react-navigation/stack';
 import {ScrollView} from 'react-native';
 import {Appbar, List, Tooltip} from 'react-native-paper';
+import {RootStackParamList} from '@/navigation/types';
+
+type Props = StackScreenProps<RootStackParamList, 'Feed'>;
 
 type RssFeed = {
   title: string;
@@ -54,7 +58,7 @@ const mockDnFeed: RssFeed = {
 
 const Icon = (props: {color: string}) => <List.Icon {...props} icon="rss" />;
 
-function Feed(): JSX.Element {
+function Feed({navigation}: Props): JSX.Element {
   return (
     <>
       <Appbar.Header>
