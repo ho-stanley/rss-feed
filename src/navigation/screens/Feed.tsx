@@ -54,7 +54,7 @@ const mockDnFeed: RssFeed = {
 
 const Icon = (props: {color: string}) => <List.Icon {...props} icon="rss" />;
 
-function Home(): JSX.Element {
+function Feed(): JSX.Element {
   return (
     <>
       <Appbar.Header>
@@ -95,4 +95,4 @@ function Home(): JSX.Element {
   );
 }
 
-export default Home;
+export default Feed;

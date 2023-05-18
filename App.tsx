@@ -1,13 +1,13 @@
 import React from 'react';
 import {Provider as PaperProvider} from 'react-native-paper';
 import {NavigationContainer} from '@react-navigation/native';
-import Home from '@/navigation/screens/Home';
+import Feed from '@/navigation/screens/Feed';
 
 function App(): JSX.Element {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Home />
+        <Feed />
       </NavigationContainer>
     </PaperProvider>
   );
