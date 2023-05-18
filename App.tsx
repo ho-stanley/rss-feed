@@ -6,24 +6,33 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Feed from '@/navigation/screens/Feed';
 import Edit from '@/navigation/screens/Edit';
 
-const Stack = createStackNavigator();
+type RootStackParamList = {
+  Feed: undefined;
+  Edit: undefined;
+};
+
+const RootStack = createStackNavigator<RootStackParamList>();
 
 function App(): JSX.Element {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
-          <Stack.Screen
+        <RootStack.Navigator
+          initialRouteName="Feed"
+          screenOptions={{headerTitleAlign: 'center'}}>
+          <RootStack.Screen
             name="Feed"
             component={Feed}
-            options={{title: 'Feed'}}
+            options={{
+              title: 'Feed',
+            }}
           />
-          <Stack.Screen
+          <RootStack.Screen
             name="Edit"
             component={Edit}
             options={{title: 'Edit'}}
           />
-        </Stack.Navigator>
+        </RootStack.Navigator>
       </NavigationContainer>
     </PaperProvider>
   );
