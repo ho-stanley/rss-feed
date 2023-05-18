@@ -5,11 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Feed from '@/navigation/screens/Feed';
 import Edit from '@/navigation/screens/Edit';
-
-type RootStackParamList = {
-  Feed: undefined;
-  Edit: undefined;
-};
+import {RootStackParamList} from '@/navigation/types';
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
