@@ -6,3 +6,9 @@ export type RootStackParamList = {
 };
 
 export type FeedProps = StackScreenProps<RootStackParamList, 'Feed'>;
+
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList extends RootStackParamList {}
+  }
+}
