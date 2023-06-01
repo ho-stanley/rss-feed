@@ -57,42 +57,30 @@ const Icon = (props: {color: string}) => <List.Icon {...props} icon="rss" />;
 
 function Feed({navigation}: FeedProps): JSX.Element {
   return (
-    <>
-      <Appbar.Header>
-        <Appbar.Content title="Feed" />
-        <Tooltip title="Add feed">
-          <Appbar.Action
-            icon="plus"
-            accessibilityLabel="Add feed"
-            onPress={() => console.log('add feed')}
+    <ScrollView>
+      <List.Accordion title={mockFzFeed.title} left={Icon}>
+        {mockFzFeed.items.map(item => (
+          <List.Item
+            key={item.link}
+            left={Icon}
+            title={item.title}
+            description={item.description}
+            onPress={() => console.log(item.link)}
           />
-        </Tooltip>
-      </Appbar.Header>
-      <ScrollView>
-        <List.Accordion title={mockFzFeed.title} left={Icon}>
-          {mockFzFeed.items.map(item => (
-            <List.Item
-              key={item.link}
-              left={Icon}
-              title={item.title}
-              description={item.description}
-              onPress={() => console.log(item.link)}
-            />
-          ))}
-        </List.Accordion>
-        <List.Accordion title={mockDnFeed.title} left={Icon}>
-          {mockDnFeed.items.map(item => (
-            <List.Item
-              key={item.link}
-              left={Icon}
-              title={item.title}
-              description={item.description}
-              onPress={() => console.log(item.link)}
-            />
-          ))}
-        </List.Accordion>
-      </ScrollView>
-    </>
+        ))}
+      </List.Accordion>
+      <List.Accordion title={mockDnFeed.title} left={Icon}>
+        {mockDnFeed.items.map(item => (
+          <List.Item
+            key={item.link}
+            left={Icon}
+            title={item.title}
+            description={item.description}
+            onPress={() => console.log(item.link)}
+          />
+        ))}
+      </List.Accordion>
+    </ScrollView>
   );
 }
 
