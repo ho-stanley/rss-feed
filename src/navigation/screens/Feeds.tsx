@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView} from 'react-native';
-import {Appbar, List, Tooltip} from 'react-native-paper';
-import {FeedProps} from '@/navigation/types';
+import {List} from 'react-native-paper';
+import {FeedsProps} from '@/navigation/types';
 
 type RssFeed = {
   title: string;
@@ -55,7 +55,7 @@ const mockDnFeed: RssFeed = {
 
 const Icon = (props: {color: string}) => <List.Icon {...props} icon="rss" />;
 
-function Feed({navigation}: FeedProps): JSX.Element {
+function Feeds({navigation, route}: FeedsProps): JSX.Element {
   return (
     <ScrollView>
       <List.Accordion title={mockFzFeed.title} left={Icon}>
@@ -84,4 +84,4 @@ function Feed({navigation}: FeedProps): JSX.Element {
   );
 }
 
-export default Feed;
+export default Feeds;

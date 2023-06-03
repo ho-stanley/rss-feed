@@ -2,7 +2,7 @@ import React from 'react';
 import {Text} from 'react-native-paper';
 import {ScrollView} from 'react-native';
 
-function Edit(): JSX.Element {
+function EditFeed(): JSX.Element {
   return (
     <ScrollView>
       <Text>Edit feed</Text>
@@ -10,4 +10,4 @@ function Edit(): JSX.Element {
   );
 }
 
-export default Edit;
+export default EditFeed;

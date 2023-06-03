@@ -3,12 +3,7 @@ import {Appbar, IconButton, Tooltip} from 'react-native-paper';
 import {getHeaderTitle} from '@react-navigation/elements';
 import {StackHeaderProps} from '@react-navigation/stack';
 
-function CustomNavigationBar({
-  navigation,
-  route,
-  options,
-  back,
-}: StackHeaderProps) {
+function AppbarHeader({navigation, route, options, back}: StackHeaderProps) {
   const title = getHeaderTitle(options, route.name);
 
   return (
@@ -19,11 +14,11 @@ function CustomNavigationBar({
         <IconButton
           icon="plus"
           accessibilityLabel="Add feed"
-          onPress={() => console.log('Add feed')}
+          onPress={() => navigation.navigate('AddFeed')}
         />
       </Tooltip>
     </Appbar.Header>
   );
 }
 
-export default CustomNavigationBar;
+export default AppbarHeader;

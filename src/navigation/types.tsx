@@ -1,11 +1,14 @@
 import {StackScreenProps} from '@react-navigation/stack';
 
 export type RootStackParamList = {
-  Feed: undefined;
-  Edit: undefined;
+  Feeds: undefined;
+  EditFeed: {feedId: string};
+  AddFeed: undefined;
 };
 
-export type FeedProps = StackScreenProps<RootStackParamList, 'Feed'>;
+export type FeedsProps = StackScreenProps<RootStackParamList, 'Feeds'>;
+
+export type AddFeedProps = StackScreenProps<RootStackParamList, 'AddFeed'>;
 
 declare global {
   namespace ReactNavigation {
