@@ -3,7 +3,12 @@ import {Appbar, IconButton, Tooltip} from 'react-native-paper';
 import {getHeaderTitle} from '@react-navigation/elements';
 import {StackHeaderProps} from '@react-navigation/stack';
 
-function AppbarHeader({navigation, route, options, back}: StackHeaderProps) {
+function AppbarHeader({
+  navigation,
+  route,
+  options,
+  back,
+}: StackHeaderProps): JSX.Element {
   const title = getHeaderTitle(options, route.name);
 
   return (
